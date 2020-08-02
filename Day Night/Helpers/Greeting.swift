@@ -30,8 +30,8 @@ class Greeting {
     
     static func getSunriseSunsetText(weather : Weather) -> (timeUntil : String, systemIcon: String)?{
         
-        let timeUntilSunrise = getTimeUntilDate(futureDate: weather.sunrise)
-        let timeUntilSunset = getTimeUntilDate(futureDate: weather.sunset)
+        let timeUntilSunrise = getTimeUntilDate(futureDate: weather.sunrise!)
+        let timeUntilSunset = getTimeUntilDate(futureDate: weather.sunset!)
         if timeUntilSunrise > 0 {
              // convert from seconds to hours, rounding down to the nearest hour
             let hours = floor(timeUntilSunrise / 60 / 60)

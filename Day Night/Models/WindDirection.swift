@@ -21,6 +21,10 @@ struct WindDirection: Decodable{
         case maxAngle = "value"
     }
     
+    init(maxAngle: Double) {
+        self.maxAngle = maxAngle
+        self.minAngle = 0
+    }
     init(from decoder : Decoder) throws {
         var container = try decoder.unkeyedContainer()
         // Fetching information from first dictionary which contains the min temperature

@@ -41,9 +41,9 @@ class DetailViewController: UIViewController {
             
             let dateFormat = DateFormatter()
             dateFormat.dateFormat = "h:mm a"
-            sunriseLabel.text = "Sunrise: \(dateFormat.string(from: weather.sunrise))"
-            sunsetLabel.text = "Sunset: \(dateFormat.string(from: weather.sunset))"
-            precipitationAccumulation.text = "Thickness: \(weather.precipitation_accumulation.value) \(Constants.PRECIPITATION_ACCUMULATION)"
+            sunriseLabel.text = "Sunrise: \(dateFormat.string(from: weather.sunrise!))"
+            sunsetLabel.text = "Sunset: \(dateFormat.string(from: weather.sunset!))"
+            precipitationAccumulation.text = "Thickness: \(weather.precipitation_accumulation!.value) \(Constants.PRECIPITATION_ACCUMULATION)"
         }
     }
     

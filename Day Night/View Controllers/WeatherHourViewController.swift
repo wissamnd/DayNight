@@ -8,19 +8,19 @@
 
 import UIKit
 
-class WeatherHourViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ModelDelegate  {
+class WeatherHourViewController: UIViewController, UITableViewDataSource, ModelWeatherByHourDelegate ,UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     var model : Model = Model()
-    var weatherList : [Weather] = [Weather]()
+    var weatherList : [WeatherByHour] = [WeatherByHour]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        model.delegate = self
+        model.weatherByHourDelegate = self
         
-        model.fetch15DaysWeather(latitude: 20, longitude: 50)
+        model.fetch96HoursWeather(latitude: 20, longitude: 50)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +30,7 @@ class WeatherHourViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.WEATHER_BY_HOUR_CELL_REUSABLE_ID, for: indexPath) as! WeatherByHourTableViewCell
         // Configure the cell with the data
-        //cell.setCell(self.weatherList[indexPath.row])
+        cell.setCell(self.weatherList[indexPath.row])
         return cell
     }
     
@@ -38,8 +38,9 @@ class WeatherHourViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func WeatherFetched(_ weatherList: [Weather]) {
+    func WeatherFetched(_ weatherList: [WeatherByHour]) {
         self.weatherList = weatherList
+        tableView.reloadData()
     }
 
     

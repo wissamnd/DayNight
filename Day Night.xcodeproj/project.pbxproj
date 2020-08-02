@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990A2DEA24D7436700D8BD96 /* WeatherByHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A2DE924D7436700D8BD96 /* WeatherByHour.swift */; };
 		991FCBCF24C991C100928CAE /* FeelsLikeTemprature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCBCE24C991C100928CAE /* FeelsLikeTemprature.swift */; };
 		991FCBD124C998D100928CAE /* WindSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCBD024C998D100928CAE /* WindSpeed.swift */; };
 		991FCBD324C99C0000928CAE /* WindDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCBD224C99C0000928CAE /* WindDirection.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		990A2DE924D7436700D8BD96 /* WeatherByHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherByHour.swift; sourceTree = "<group>"; };
 		991FCBCE24C991C100928CAE /* FeelsLikeTemprature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelsLikeTemprature.swift; sourceTree = "<group>"; };
 		991FCBD024C998D100928CAE /* WindSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeed.swift; sourceTree = "<group>"; };
 		991FCBD224C99C0000928CAE /* WindDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindDirection.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				991FCBD224C99C0000928CAE /* WindDirection.swift */,
 				991FCBD424C99D1600928CAE /* Visibility.swift */,
 				99E4D2E724CDF4B400D29AFA /* PrecipitationAccumulation.swift */,
+				990A2DE924D7436700D8BD96 /* WeatherByHour.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				999DE6A724BF23B0006099BC /* Greeting.swift in Sources */,
 				99B31F8E24B99E6E00378E95 /* WeatherDaysViewController.swift in Sources */,
 				99FFCF6724B7197B000724FD /* Weather.swift in Sources */,
+				990A2DEA24D7436700D8BD96 /* WeatherByHour.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

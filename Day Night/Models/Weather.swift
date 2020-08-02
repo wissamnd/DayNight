@@ -19,9 +19,9 @@ struct Weather : Decodable {
     var wind_speed : WindSpeed
     var wind_direction : WindDirection
     var visibility : Visibility
-    var sunrise : Date
-    var sunset : Date
-    var precipitation_accumulation : PrecipitationAccumulation
+    var sunrise : Date?
+    var sunset : Date?
+    var precipitation_accumulation : PrecipitationAccumulation?
     
     
     enum CodingKeys : String, CodingKey {
@@ -63,6 +63,7 @@ struct Weather : Decodable {
         // decode weather code
         self.weather_code = try container.decode(WeatherIcon.self, forKey: .weather_code)
         
+        
         // decode observation time or data
         let observation_time_Container = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .observation_time)
         let dateFormatterGet = DateFormatter()
@@ -83,19 +84,27 @@ struct Weather : Decodable {
         
         
         // decode sunrise
-        let sunsrise_date_Container = try container.nestedContainer(keyedBy: CodingKeysSunrise.self, forKey: .sunrise)
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let dateStringSunrise = try sunsrise_date_Container.decode(String.self, forKey: .sunrise)
-        self.sunrise = dateFormatter.date(from: dateStringSunrise)!
+        if(container.contains(.sunrise)){
+            let sunsrise_date_Container = try container.nestedContainer(keyedBy: CodingKeysSunrise.self, forKey: .sunrise)
+            let dateStringSunrise = try sunsrise_date_Container.decode(String.self, forKey: .sunrise)
+            self.sunrise = dateFormatter.date(from: dateStringSunrise)!
+        }
+        
         
         // decode sunset
-        let sunset_date_Container = try container.nestedContainer(keyedBy: CodingKeysSunset.self, forKey: .sunset)
-        let dateStringSunset = try sunset_date_Container.decode(String.self, forKey: .sunset)
-        self.sunset = dateFormatter.date(from: dateStringSunset)!
+        if(container.contains(.sunset)){
+            let sunset_date_Container = try container.nestedContainer(keyedBy: CodingKeysSunset.self, forKey: .sunset)
+            let dateStringSunset = try sunset_date_Container.decode(String.self, forKey: .sunset)
+            self.sunset = dateFormatter.date(from: dateStringSunset)!
+        }
         
         
-        self.precipitation_accumulation = try container.decode(PrecipitationAccumulation.self, forKey: .precipitation_accumulation)
+        if(container.contains(.precipitation_probability)){
+            self.precipitation_accumulation = try container.decode(PrecipitationAccumulation.self, forKey: .precipitation_accumulation)
+        }
+        
     }
 }

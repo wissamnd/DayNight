@@ -11,9 +11,10 @@ import Foundation
 struct Constants {
     
     // Add your api key here
-    static var CLIMACELL_API_KEY = ""
+    static var CLIMACELL_API_KEY = "h09r8qm2yU9RzaxCbGB0ctDCfdeQnm0U"
     
     static var CLIMACELL_API_BASE_URL = "https://api.climacell.co/v3/weather/forecast/daily"
+    static var CLIMACELL_API_BASE_URL_HOURLY = "https://api.climacell.co/v3/weather/forecast/hourly"
     static var WEATHER_BY_DAY_CELL_REUSABLE_ID = "WeatherByDayCell"
     static var WEATHER_BY_HOUR_CELL_REUSABLE_ID = "WeatherByHourCell"
     static var TEMP_UNIT = "°"
