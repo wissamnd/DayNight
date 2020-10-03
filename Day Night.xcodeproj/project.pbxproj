@@ -12,6 +12,7 @@
 		991FCBD124C998D100928CAE /* WindSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCBD024C998D100928CAE /* WindSpeed.swift */; };
 		991FCBD324C99C0000928CAE /* WindDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCBD224C99C0000928CAE /* WindDirection.swift */; };
 		991FCBD524C99D1600928CAE /* Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCBD424C99D1600928CAE /* Visibility.swift */; };
+		9927B86B24DD4B3E00245DDC /* DetailWeatherByHourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927B86A24DD4B3E00245DDC /* DetailWeatherByHourViewController.swift */; };
 		9933BB7D24D18FA000ED5570 /* WeatherByHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933BB7C24D18FA000ED5570 /* WeatherByHourTableViewCell.swift */; };
 		9933BB7F24D1904800ED5570 /* WeatherHourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933BB7E24D1904800ED5570 /* WeatherHourViewController.swift */; };
 		999C9AD924CAE3F20088E677 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C9AD824CAE3F20088E677 /* DetailViewController.swift */; };
@@ -30,6 +31,7 @@
 		99F684FC24B64A7B0013ECF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F684FB24B64A7B0013ECF6 /* Assets.xcassets */; };
 		99F684FF24B64A7B0013ECF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F684FD24B64A7B0013ECF6 /* LaunchScreen.storyboard */; };
 		99F6850824B64AD00013ECF6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F6850724B64AD00013ECF6 /* Constants.swift */; };
+		99F810C624DC22E200A123CF /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F810C524DC22E200A123CF /* MoonPhase.swift */; };
 		99FFCF6724B7197B000724FD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFCF6624B7197B000724FD /* Weather.swift */; };
 		99FFCF6B24B72175000724FD /* Temprature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFCF6A24B72175000724FD /* Temprature.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,7 @@
 		991FCBD024C998D100928CAE /* WindSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeed.swift; sourceTree = "<group>"; };
 		991FCBD224C99C0000928CAE /* WindDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindDirection.swift; sourceTree = "<group>"; };
 		991FCBD424C99D1600928CAE /* Visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visibility.swift; sourceTree = "<group>"; };
+		9927B86A24DD4B3E00245DDC /* DetailWeatherByHourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherByHourViewController.swift; sourceTree = "<group>"; };
 		9933BB7C24D18FA000ED5570 /* WeatherByHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherByHourTableViewCell.swift; sourceTree = "<group>"; };
 		9933BB7E24D1904800ED5570 /* WeatherHourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHourViewController.swift; sourceTree = "<group>"; };
 		999C9AD824CAE3F20088E677 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		99F684FE24B64A7B0013ECF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99F6850024B64A7B0013ECF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99F6850724B64AD00013ECF6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		99F810C524DC22E200A123CF /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
 		99FFCF6624B7197B000724FD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		99FFCF6A24B72175000724FD /* Temprature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temprature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +145,7 @@
 				99B31F8D24B99E6E00378E95 /* WeatherDaysViewController.swift */,
 				999C9AD824CAE3F20088E677 /* DetailViewController.swift */,
 				9933BB7E24D1904800ED5570 /* WeatherHourViewController.swift */,
+				9927B86A24DD4B3E00245DDC /* DetailWeatherByHourViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				991FCBD424C99D1600928CAE /* Visibility.swift */,
 				99E4D2E724CDF4B400D29AFA /* PrecipitationAccumulation.swift */,
 				990A2DE924D7436700D8BD96 /* WeatherByHour.swift */,
+				99F810C524DC22E200A123CF /* MoonPhase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,7 +197,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Wissam Noureddine";
 				TargetAttributes = {
 					99F684EE24B64A760013ECF6 = {
@@ -255,6 +261,8 @@
 				991FCBD124C998D100928CAE /* WindSpeed.swift in Sources */,
 				999DE6A724BF23B0006099BC /* Greeting.swift in Sources */,
 				99B31F8E24B99E6E00378E95 /* WeatherDaysViewController.swift in Sources */,
+				99F810C624DC22E200A123CF /* MoonPhase.swift in Sources */,
+				9927B86B24DD4B3E00245DDC /* DetailWeatherByHourViewController.swift in Sources */,
 				99FFCF6724B7197B000724FD /* Weather.swift in Sources */,
 				990A2DEA24D7436700D8BD96 /* WeatherByHour.swift in Sources */,
 			);
@@ -308,6 +316,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -368,6 +377,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -401,8 +411,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MFACC73Y7V;
 				INFOPLIST_FILE = "Day Night/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,8 +430,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MFACC73Y7V;
 				INFOPLIST_FILE = "Day Night/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -168,13 +168,17 @@ class WeatherDaysViewController: UIViewController , UITableViewDataSource, UITab
             rainChanceImageView.isHidden = false
         }
         
-        imageTodayView.image = weathertoday.weather_code.getWeatherIcon()!
+        imageTodayView.image = weathertoday.weather_code.getWeatherIconDay()!
         self.loadingIndicator.stopAnimating()
         
 
         if let sunriseSunset = Greeting.getSunriseSunsetText(weather: weathertoday) {
             sunsetSunriseLabel.text = sunriseSunset.timeUntil
-            sunriseSunsetIcon.image = UIImage(systemName: sunriseSunset.systemIcon)
+            if #available(iOS 13.0, *) {
+                sunriseSunsetIcon.image = UIImage(systemName: sunriseSunset.systemIcon)
+            } else {
+                // Fallback on earlier versions
+            }
             sunriseSunsetIcon.isHidden = false
         }else{
             dateTodayLabel.textColor = .white

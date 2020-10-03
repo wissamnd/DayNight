@@ -29,18 +29,27 @@ class Greeting {
     }
     
     static func getSunriseSunsetText(weather : Weather) -> (timeUntil : String, systemIcon: String)?{
-        
         let timeUntilSunrise = getTimeUntilDate(futureDate: weather.sunrise!)
         let timeUntilSunset = getTimeUntilDate(futureDate: weather.sunset!)
         if timeUntilSunrise > 0 {
              // convert from seconds to hours, rounding down to the nearest hour
             let hours = floor(timeUntilSunrise / 60 / 60)
             let minutes = floor((timeUntilSunrise - (hours * 60 * 60)) / 60)
-            return ("\(Int(abs(hours))) hr \(Int(abs(minutes))) min", "sunrise")
+            if hours == 0 {
+                return ("\(Int(abs(minutes))) min", "sunrise")
+            }else{
+                return ("\(Int(abs(hours))) hr \(Int(abs(minutes))) min", "sunrise")
+            }
+            
         }else if timeUntilSunset > 0{
             let hours = floor(timeUntilSunset / 60 / 60)
             let minutes = floor((timeUntilSunset - (hours * 60 * 60)) / 60)
-            return ("\(Int(abs(hours))) hr \(Int(abs(minutes))) min", "sunset")
+            if hours == 0 {
+                return ("\(Int(abs(minutes))) min", "sunset")
+            }else{
+                return ("\(Int(abs(hours))) hr \(Int(abs(minutes))) min", "sunset")
+            }
+            
         }
         return nil
         

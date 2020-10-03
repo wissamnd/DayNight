@@ -19,6 +19,7 @@ struct WeatherByHour : Decodable {
     var visibility : Double
     var observation_time : Date
     var weather_code : WeatherIcon
+    var moon_phase : MoonPhase
     
     
     
@@ -36,6 +37,7 @@ struct WeatherByHour : Decodable {
         case wind_speed
         case visibility
         case wind_direction
+        case moon_phase
     }
     
     init(from decoder : Decoder) throws {
@@ -79,9 +81,14 @@ struct WeatherByHour : Decodable {
         let visibilityContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .visibility)
         self.visibility = try visibilityContainer.decode(Double.self, forKey: .value)
         
-        // decode wind_direction
+        // decode wind direction
         let windDirectionContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .wind_direction)
         let windAngle = try windDirectionContainer.decode(Double.self, forKey: .value)
         self.wind_direction = WindDirection(maxAngle: windAngle)
+        
+        // decode moon phase
+        let moonPhaseContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .moon_phase)
+        let moonPhase : String = try moonPhaseContainer.decode(String.self, forKey: .value)
+        self.moon_phase = MoonPhase(phase: moonPhase)
     }
 }

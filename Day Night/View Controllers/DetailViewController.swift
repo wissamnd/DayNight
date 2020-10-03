@@ -49,13 +49,13 @@ class DetailViewController: UIViewController {
     
     func setTempIcon(_ temp: Double){
         if temp < 15{
-            tempIcon.image = UIImage(systemName: "thermometer.snowflake")
+            tempIcon.image = UIImage(named: "thermometer.snowflake")
             tempIcon.tintColor = .systemBlue
         }else if temp >= 15 && temp <= 25{
-            tempIcon.image = UIImage(systemName: "thermometer")
-            tempIcon.tintColor = .green
+            tempIcon.image = UIImage(named: "thermometer")
+            tempIcon.tintColor = .brown
         }else{
-            tempIcon.image = UIImage(systemName: "thermometer.sun")
+            tempIcon.image = UIImage(named: "thermometer.sun")
             tempIcon.tintColor = .systemYellow
         }
     }

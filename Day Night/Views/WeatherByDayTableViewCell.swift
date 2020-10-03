@@ -35,7 +35,7 @@ class WeatherByDayTableViewCell: UITableViewCell {
         
         tempLabel.text = String(weather.temp.maxTemp.rounded())+Constants.TEMP_UNIT
         
-        weatherIcon.image = weather.weather_code.getWeatherIcon()!
+        weatherIcon.image = weather.weather_code.getWeatherIconDay()!
         
         minTempLabel.text = "/ \(weather.temp.minTemp.rounded())\(Constants.TEMP_UNIT)"
         

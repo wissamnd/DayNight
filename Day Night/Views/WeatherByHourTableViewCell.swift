@@ -18,10 +18,10 @@ class WeatherByHourTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     func setCell(_ w : WeatherByHour){
@@ -32,16 +32,44 @@ class WeatherByHourTableViewCell: UITableViewCell {
         
         tempLabel.text = String(weather.temp.rounded())+Constants.TEMP_UNIT
         
-        weatherIconImageView.image = weather.weather_code.getWeatherIcon()!
         
+        
+        
+        
+        let date = weather.observation_time
         let df = DateFormatter()
-        df.dateFormat = "EEE d, h a"
-        timeLabel.text = df.string(from: weather.observation_time)
+        df.dateFormat = "EEE, h a"
+        
+        let day = Calendar.current.component(.day, from: date)
+        let todaysDay = Calendar.current.component(.day, from: Date())
+        
+        if(day == todaysDay){
+            df.dateFormat = "h a"
+            timeLabel.text = "Today, " + df.string(from: date)
+        }else if (day == todaysDay + 1){
+            df.dateFormat = "h a"
+            timeLabel.text = "Tommorow, " + df.string(from: date)
+        }else {
+            df.dateFormat = "EEE, h a"
+            timeLabel.text = df.string(from: date)
+            
+        }
+        
+        // assign the weather icon based on the time of the day
+        let hour = Calendar.current.component(.hour, from: weather.observation_time)
+        if hour > 6 && hour < 19 {
+            weatherIconImageView.image = weather.weather_code.getWeatherIconDay()!
+        }else{
+            weatherIconImageView.image = weather.weather_code.getWeatherIconNight()!
+        }
+        
+        
+        
         
         precipitationPropabilityLabel.text = "\(Int(weather.precipitation_probability))%"
         
         
         
     }
-
+    
 }

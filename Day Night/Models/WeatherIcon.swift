@@ -21,7 +21,7 @@ struct WeatherIcon : Decodable{
         self.value = try container.decode(String.self, forKey: .value)
     }
     
-    func getWeatherIcon() -> UIImage? {
+    func getWeatherIconDay() -> UIImage? {
         switch value {
         case "partly_cloudy":
             return UIImage(named: "partly_cloudy_day")
@@ -46,5 +46,8 @@ struct WeatherIcon : Decodable{
             return UIImage(named: value)
         }
     }
+    
+    
+
     
 }

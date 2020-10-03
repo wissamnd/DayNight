@@ -72,7 +72,8 @@ class Model {
             "wind_speed",
             "wind_direction",
             "precipitation",
-            "visibility"
+            "visibility",
+            "moon_phase"
         ]
         let url = baseurl.withQuery(query, fields)!
         let task = URLSession.shared.dataTask(with: url) {
